@@ -54,7 +54,8 @@
                 console.log('is theme light ? '+isThemeLight);
                 document.body.style.backgroundColor = isThemeLight ? darkColor : lightColor;
                 document.getElementById('button').style.backgroundColor = isThemeLight ? lightColor : darkColor;
-                document.getElementById('logo').src = './static/media/' + (isThemeLight ? 'cs-dark' : 'cs-light') + '.png';
+                document.getElementById('logo-light').style.visibility = isThemeLight ? 'hidden' : 'visible';
+                document.getElementById('logo-dark').style.visibility = isThemeLight ? 'visible' : 'hidden';
                 isThemeLight = !isThemeLight;
                 return false;
             }
@@ -67,7 +68,8 @@
         <div id="root">
             <div>
                 <a onclick="return handleClick()" id="button" href="#" class="App-Button" style="background: rgb(255, 255, 255);"></a>
-                <img id="logo" src="./static/media/cs-dark.png" class="Logo" alt="Logo">
+                <img id="logo-light" style="visibility: hidden;" src="./static/media/cs-light.png" class="Logo" alt="logo-light">
+                <img id="logo-dark" style="visibility: visible;" src="./static/media/cs-dark.png" class="Logo" alt="logo-dark">
             </div>
         </div>
     </body>
