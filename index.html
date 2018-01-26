@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <!--
+        Notice the use of  in the tags above.
+        It will be replaced with the URL of the `public` folder during the build.
+        Only files inside the `public` folder can be referenced from the HTML.
+
+        Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+        work correctly both with client-side routing and a non-root public URL.
+        Learn how to configure a non-root public URL by running `npm run build`.
+        -->
+        <title>Cocorico Studio</title>
+        <style type="text/css">body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        </style>
+        <style type="text/css">.App-Button {
+            width: 20px;
+            height: 20px;
+            border: 1px solid;
+            border-radius: 4px;
+            border-color: rgb(216, 226, 235);
+            margin-right: 20px;
+            margin-top: 20px;
+            float: right;
+        }
+        </style>
+        <style type="text/css">.Logo {
+            background-color: #fff;
+            width: 50%;
+            top: 50%;
+            left: 50%;
+            max-width: 280px;
+            position: fixed;
+            -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+        }
+        </style>
+        <script type="text/javascript">
+            const darkColor = '#1b1b1b';
+            const lightColor = '#fff';
+            var isThemeLight = false;
+
+            function handleClick() {
+                console.log('is theme light ? '+isThemeLight);
+                document.body.style.backgroundColor = isThemeLight ? darkColor : lightColor;
+                document.getElementById('button').style.backgroundColor = isThemeLight ? lightColor : darkColor;
+                document.getElementById('logo').src = './static/media/' + (isThemeLight ? 'cs-dark' : 'cs-light') + '.png';
+                isThemeLight = !isThemeLight;
+                return false;
+            }
+        </script>
+    </head>
+    <body style="background-color: rgb(27, 27, 27);">
+        <noscript>
+        You need to enable JavaScript to run this app.
+        </noscript>
+        <div id="root">
+            <div>
+                <a onclick="return handleClick()" id="button" href="#" class="App-Button" style="background: rgb(255, 255, 255);"></a>
+                <img id="logo" src="./static/media/cs-dark.png" class="Logo" alt="Logo">
+            </div>
+        </div>
+    </body>
+</html>
